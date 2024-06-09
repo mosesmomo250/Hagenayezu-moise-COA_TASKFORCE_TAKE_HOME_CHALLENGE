@@ -1,0 +1,225 @@
+@import url('https://fonts.cdnfonts.com/css/d-din');
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #333;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2 {
+    color: grey;
+    margin: 20px 0;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center align gallery items */
+    border: 2px solid yellow; /* Yellow border */
+}
+
+.gallery.gallery03 {
+    display: inline-flex; /* Align items inline */
+    justify-content: flex-start; /* Align gallery03 items to the left */
+    gap: 0px; /* No gap for gallery03 */
+    border: 2px solid rgb(0, 0, 0); /* Yellow border */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+}
+
+.gallery.gallery03 .gallery-item {
+    width: 98.5px; /* Width for gallery03 items */
+    height: 600px; /* Height for gallery03 items */
+    flex: none; /* Ensure items do not flex */
+}
+
+.intro {
+    background: #B22222;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 20px;
+    border: 4px solid rgb(37, 15, 237);
+}
+
+.text p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 1.5;
+    text-align: left;
+    max-width: 1140px;
+}
+
+.text:hover p {
+    text-decoration: none;
+    text-decoration-color: rgb(24, 145, 193);
+    display: inline-block; /* This makes the border wrap around the text */
+    padding: 0.1em 0.2em; /* Adjust the padding as needed to control the size of the rectangle */
+    border: 4px solid rgb(237, 15, 204); /* This adds a solid border of blue */
+}
+
+
+.gallery-section {
+    margin: 20px;
+}
+
+.gallery.gallery01 {
+    justify-content: flex-start; /* Left-align gallery01 items */
+    border: 2px solid rgb(0, 0, 0); /* Yellow border */
+    width: fit-content; /* Fit border to content */
+    margin: 0 auto; /* Center the gallery in the viewport */
+}
+
+.gallery-item {
+    flex: 1 1 293px;
+    max-width: 293px;
+    height: 588px;
+    position: relative;
+    transition: transform 0.3s ease;
+    border-radius: 0px; /* Rounded borders */
+    overflow: hidden; /* Ensure blur doesn't overflow */
+}
+
+.gallery-item.small {
+    width: 98.5px;
+    height: 600px;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+    border: 4px solid rgb(0, 234, 23);
+    
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.heading, .description {
+    position: absolute;
+    color: white;
+    padding: 5px 10px;
+}
+
+.heading {
+    font-family: 'D-DIN', Arial, sans-serif;
+    bottom: 50px;
+    left: 10px;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 24px;
+    opacity: 0.8;
+}
+
+.description {
+    font-family: 'Poppins', sans-serif;
+    bottom: 10px;
+    left: 10px;
+    font-size: 12px;
+    font-weight: 400;
+    opacity: 0.8;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover, .close:focus {
+    color: #bbb;
+    cursor: pointer;
+}
+
+@keyframes zoom {
+    from { transform: scale(0) }
+    to { transform: scale(1) }
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 768px) {
+    .intro {
+        margin: 10px;
+        padding: 20px;
+    }
+
+    .text p {
+        font-size: 18px;
+        line-height: 1.5;
+    }
+
+    .gallery.gallery01 {
+        justify-content: flex-start; /* Left-align gallery01 items */
+        width: 100%; /* Ensure border surrounds the gallery properly */
+    }
+
+    .gallery-item {
+        flex: 1 1 100%;
+        max-width: 100%; /* Ensure images take full width in small screens */
+        height: auto; /* Auto height for responsive design */
+    }
+
+    .gallery-item img {
+        width: 100%;
+        height: auto;
+    }
+
+    .heading {
+        font-size: 20px;
+        bottom: 40px;
+    }
+
+    .description {
+        font-size: 10px;
+        bottom: 5px;
+    }
+
+    .gallery.gallery03 .gallery-item {
+        width: 100%; /* Full width for responsive design */
+        height: auto; /* Auto height for responsive design */
+    }
+}
