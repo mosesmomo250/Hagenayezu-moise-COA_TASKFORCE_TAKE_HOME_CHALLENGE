@@ -1,4 +1,4 @@
-NAMES: HAGENAYEZU Moise
+
 COA TASKFORCE Take Home Challenge
 
 This repository showcases my solution for the COA TASKFORCE Take Home Challenge. The challenge involved creating an interactive photo gallery and addressing two coding challenges using JavaScript.
